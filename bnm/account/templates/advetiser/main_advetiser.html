@@ -1,0 +1,23 @@
+{%  extends 'advetiser/manipage_advetiser.html' %}
+
+{% block content %}
+
+<table class="table table-sm">
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Platforms</th>
+        <th>Advertiser</th>
+    </tr>
+
+    {% for posting in postings %}
+        <tr>
+            <td>{{posting.title}}</td>
+            <td>{{posting.description}}</td>
+            <td>{{posting.platforms}}</td>
+            <td>{{posting.advertiser}}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

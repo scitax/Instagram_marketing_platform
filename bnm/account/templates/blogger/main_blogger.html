@@ -1,0 +1,25 @@
+{%  extends 'blogger/manipage_blogger.html' %}
+
+{% block content %}
+
+<table class="table table-sm">
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Platforms</th>
+        <th>Advertiser</th>
+        <th>Action</th>
+    </tr>
+
+    {% for posting in postings %}
+        <tr>
+            <td>{{posting.title}}</td>
+            <td>{{posting.description}}</td>
+            <td>{{posting.platforms}}</td>
+            <td>{{posting.advertiser}}</td>
+            <td><button href="{% url 'submit_posting' posting.pk %}"></button></td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
