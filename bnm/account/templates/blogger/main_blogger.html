@@ -17,7 +17,7 @@
             <td>{{posting.description}}</td>
             <td>{{posting.platforms}}</td>
             <td>{{posting.advertiser}}</td>
-            <td><button href="{% url 'submit_posting' posting.pk %}"></button></td>
+            <td><a class="button" href="{% url 'submit_posting' posting.pk %}">Submit</a></td>
         </tr>
     {% endfor %}
 </table>

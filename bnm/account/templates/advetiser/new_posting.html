@@ -1,17 +1,20 @@
-<table class="table table-sm">
-    <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Platforms</th>
-        <th>Advertiser</th>
-    </tr>
+{%  extends 'advetiser/manipage_advetiser.html' %}
 
-    {% for posting in postings %}
-        <tr>
-            <td>{{posting.title}}</td>
-            <td>{{posting.description}}</td>
-            <td>{{posting.platforms}}</td>
-            <td>{{posting.advertiser}}</td>
-        </tr>
-    {% endfor %}
-</table>
+{% block content %}
+
+    <form method="post" action="">
+        {%csrf_token%}
+        <label for="title">Title:</label><br>
+        <input type="text"  name="title"><br>
+        <label for="description">Description:</label><br>
+        <input type="text"  name="description"><br>
+        Chose platform<br>
+        {% for platform in platforms_list %}
+            <input type="radio" id="{{platform}}" name="platform" value="{{platform}}">
+            <label for="{{platform}}">{{platform}}</label><br>
+        {% endfor %}
+    <input type="submit" value="Submit">
+    </form>
+
+
+{% endblock %}

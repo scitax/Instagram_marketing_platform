@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
-from .models import User, Platforms, Add_posting
+from .models import User, Platform, Advertisement_posting
 
 
 class UserAdmin(BaseUserAdmin):
@@ -33,5 +33,5 @@ class UserAdmin(BaseUserAdmin):
 
 
 admin.site.register(User, UserAdmin)
-admin.site.register(Platforms)
-admin.site.register(Add_posting)
+admin.site.register(Platform)
+admin.site.register(Advertisement_posting)

@@ -9,6 +9,7 @@
         <th>Title</th>
         <th>Description</th>
         <th>Platforms</th>
+        <th>Responses</th>
     </tr>
 
     {% for posting in my_postings_query %}
@@ -16,6 +17,9 @@
             <td>{{posting.title}}</td>
             <td>{{posting.description}}</td>
             <td>{{posting.platforms}}</td>
+            <td> <a href="{% url 'my-posting' posting.pk %}">
+                View all responses ({{posting.accepted_blogger.all.count}})
+            </a></td>
         </tr>
     {% endfor %}
 </table>
